@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.dinhnt.fpl_asm_androidui.fragment.khoan_chi.KhoanChiFragment;
 import com.dinhnt.fpl_asm_androidui.fragment.khoan_thu.KhoanThuFragment;
+import com.dinhnt.fpl_asm_androidui.fragment.thong_ke.ThongKeFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menuKhoanChi:
                         fragmentClass = KhoanChiFragment.class;
+                        break;
+                    case R.id.menuThongKe:
+                        fragmentClass = ThongKeFragment.class;
                         break;
                     default:
                         fragmentClass = KhoanThuFragment.class;
