@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/dialog_cap_nhat_loai_khoan_thu.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/dialog_them_khoan_thu.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/dialog_them_loai_khoan_thu.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_khoan_chi.xml" value="0.2890625" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_khoan_thu.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_khoan_thu_tab.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_khoang_thu.xml" value="0.23233695652173914" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_khoang_thu_tab.xml" value="0.35507246376811596" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_loai_khoan_thu_tab.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/fragment_loai_khoang_thu_tab.xml" value="0.35507246376811596" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/header_view_layout.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/item_loai_khoan_thu.xml" value="0.5" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/item_spinner_loai_khoan_thu.xml" value="0.36277173913043476" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/layout/toolbar.xml" value="0.35507246376811596" />
+        <entry key="..\:/FPL_ASM_AndroidUI/app/src/main/res/menu/menu.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
