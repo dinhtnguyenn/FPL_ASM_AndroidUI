@@ -132,22 +132,26 @@ public class QuanLyThuChiSQLite extends SQLiteOpenHelper {
 
     //lấy thông tin tổng khoản thu/khoản chi (thông kê
     public float[] getThongTinThuChi() {
-        //thu
         int thu = 0, chi = 0;
 
         //select sum(tien)
         //from giaodich
-        //where maloai in (select maloai from phanloai where thangthai = 'chi')
+        //where maloai in (select maloai from phanloai where thangthai = 'thu')
         Cursor cursorThu = db.rawQuery("select sum(" + KEY_TIEN + ") from " + TABLE_GIAODICH
-                + " where " + KEY_MALOAI + " in (select " + KEY_MALOAI + " from " + TABLE_PHANLOAI + " where " + KEY_TRANGTHAI + " = 'thu') ", null);
+                + " where " + KEY_MALOAI + " in (select " + KEY_MALOAI + " from " + TABLE_PHANLOAI
+                                    + " where " + KEY_TRANGTHAI + " = 'thu') ", null);
 
         if (cursorThu.getCount() != 0) {
             cursorThu.moveToFirst();
             thu = cursorThu.getInt(0);
         }
 
+        //select sum(tien)
+        //from giaodich
+        //where maloai in (select maloai from phanloai where thangthai = 'chi')
         Cursor cursorChi = db.rawQuery("select sum(" + KEY_TIEN + ") from " + TABLE_GIAODICH
-                + " where " + KEY_MALOAI + " in (select " + KEY_MALOAI + " from " + TABLE_PHANLOAI + " where " + KEY_TRANGTHAI + " = 'chi') ", null);
+                + " where " + KEY_MALOAI + " in (select " + KEY_MALOAI + " from " + TABLE_PHANLOAI
+                                        + " where " + KEY_TRANGTHAI + " = 'chi') ", null);
 
         if (cursorChi.getCount() != 0) {
             cursorChi.moveToFirst();
