@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.dinhnt.fpl_asm_androidui.R;
+import com.dinhnt.fpl_asm_androidui.helper.QuanLyThuChiSQLite;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
@@ -28,6 +29,8 @@ public class ThongKeFragment extends Fragment implements OnChartValueSelectedLis
 
     private PieChart mChart;
 
+    QuanLyThuChiSQLite quanLyThuChi;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class ThongKeFragment extends Fragment implements OnChartValueSelectedLis
         mChart.setCenterText("Thống kê");
         mChart.setCenterTextSize(10);
         mChart.setDrawEntryLabels(true);
+
+        quanLyThuChi = new QuanLyThuChiSQLite(getActivity());
 
         addDataSet(mChart);
 
@@ -63,11 +68,11 @@ public class ThongKeFragment extends Fragment implements OnChartValueSelectedLis
 
     }
 
-    private static void addDataSet(PieChart pieChart) {
+    private void addDataSet(PieChart pieChart) {
         ArrayList<PieEntry> yEntrys = new ArrayList<>();
         ArrayList<String> xEntrys = new ArrayList<>();
-        float[] yData = { 25, 40, 70 };
-        String[] xData = { "January", "February", "January" };
+        float[] yData = quanLyThuChi.getThongTinThuChi();
+        String[] xData = { "Khoản thu", "Khoản chi" };
 
         for (int i = 0; i < yData.length;i++){
             yEntrys.add(new PieEntry(yData[i],i));
@@ -76,12 +81,11 @@ public class ThongKeFragment extends Fragment implements OnChartValueSelectedLis
             xEntrys.add(xData[i]);
         }
 
-        PieDataSet pieDataSet=new PieDataSet(yEntrys,"Khoảng thu/chi");
+        PieDataSet pieDataSet=new PieDataSet(yEntrys,"Khoản thu/Khoản chi");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
 
         ArrayList<Integer> colors=new ArrayList<>();
-        colors.add(Color.GRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
 

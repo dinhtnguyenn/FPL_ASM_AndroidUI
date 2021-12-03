@@ -20,7 +20,7 @@ public class QuanLyThuChiSQLite extends SQLiteOpenHelper {
     private static final String TABLE_PHANLOAI = "phanloai";
     private static final String KEY_MALOAI = "maloai";
     private static final String KEY_TENLOAI = "tenloai";
-    private static final String KEY_TRANGTHAI = "thangthai";
+    private static final String KEY_TRANGTHAI = "trangthai";
 
     private static final String TABLE_GIAODICH = "giaodich";
     private static final String KEY_MAGD = "magd";
@@ -45,6 +45,34 @@ public class QuanLyThuChiSQLite extends SQLiteOpenHelper {
         db.execSQL(sqlPhanLoai);
 
         //tương tự cho table giao dịch
+        String sqlGiaoDich = "create table " + TABLE_GIAODICH +
+                "(" +
+                KEY_MAGD + " integer primary key autoincrement, " +
+                KEY_TIEUDE + " text, " +
+                KEY_NGAY + " text," +
+                KEY_TIEN + " int," +
+                KEY_MOTA + " text," +
+                KEY_MALOAI + " text" +
+                ")";
+        db.execSQL(sqlGiaoDich);
+
+        //thêm data mẫu cho thống kê
+        String phanLoai = "INSERT INTO " + TABLE_PHANLOAI + " ("
+                + KEY_MALOAI + ", " + KEY_TENLOAI + ", "
+                + KEY_TRANGTHAI + ") Values ('1', 'lương', 'thu'),('2', 'thưởng tết', 'thu'), " +
+                "('3', 'ăn uống', 'chi'), ('4', 'mua sắm', 'chi')";
+        db.execSQL(phanLoai);
+
+        String giaoDich = "INSERT INTO " + TABLE_GIAODICH + " ("
+                + KEY_TIEUDE + ", " + KEY_NGAY + ", "
+                + KEY_TIEN + ", " + KEY_MOTA + ", "
+                + KEY_MALOAI + ") Values ('1', '03/12/2021', '10000', 'ăn trưa', '3'), " +
+                "('2', '03/12/2021', '15000', 'mua quần áo', '4'), " +
+                "('3', '03/12/2021', '200000', 'lương t12', '1'), " +
+                "('4', '03/12/2021', '20000', 'thưởng tết 2022', '2')";
+        db.execSQL(giaoDich);
+
+
     }
 
     @Override
@@ -102,5 +130,33 @@ public class QuanLyThuChiSQLite extends SQLiteOpenHelper {
         db.delete(TABLE_PHANLOAI, "maloai=?", new String[]{String.valueOf(maLoai)});
     }
 
+    //lấy thông tin tổng khoản thu/khoản chi (thông kê
+    public float[] getThongTinThuChi() {
+        //thu
+        int thu = 0, chi = 0;
+
+        //select sum(tien)
+        //from giaodich
+        //where maloai in (select maloai from phanloai where thangthai = 'chi')
+        Cursor cursorThu = db.rawQuery("select sum(" + KEY_TIEN + ") from " + TABLE_GIAODICH
+                + " where " + KEY_MALOAI + " in (select " + KEY_MALOAI + " from " + TABLE_PHANLOAI + " where " + KEY_TRANGTHAI + " = 'thu') ", null);
+
+        if (cursorThu.getCount() != 0) {
+            cursorThu.moveToFirst();
+            thu = cursorThu.getInt(0);
+        }
+
+        Cursor cursorChi = db.rawQuery("select sum(" + KEY_TIEN + ") from " + TABLE_GIAODICH
+                + " where " + KEY_MALOAI + " in (select " + KEY_MALOAI + " from " + TABLE_PHANLOAI + " where " + KEY_TRANGTHAI + " = 'chi') ", null);
+
+        if (cursorChi.getCount() != 0) {
+            cursorChi.moveToFirst();
+            chi = cursorChi.getInt(0);
+        }
+
+        float[] ketQua = new float[]{thu, chi};
+        return ketQua;
+
+    }
 
 }
