@@ -6,8 +6,31 @@ Documments: https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/blob/main/readme/A
 
 Videos: https://www.youtube.com/playlist?list=PLzNgKQA0vkdoVcMf73Hj_AJ1TVDVrB0bM
 
-Một số hình ảnh
+Nếu gặp lỗi "Android Gradle plugin requires Java 11 to run. You are currently using Java 1.8" khi tải project về, thực hiện theo hướng dẫn sau:
+
+Lỗi: 
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/error.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
+
+Fix lỗi:
+
+Bước 1: Trong Android Studio --> chọn File --> Project Structure...
+
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/error-stp1.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
+
+Bước 2: Chọn SDK Location --> Gradle Settings
+
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/error-stp2.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
+
+Bước 3: Trong mục Gradle JDK, chọn Embedded JDK
+
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/error-stp3.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
+
+
+Một số hình ảnh:
+
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/Screenshot_1638151104.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/Screenshot_1638152894.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/Screenshot_1638155648.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/Screenshot_1638156068.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/dinhtnguyenn/FPL_ASM_AndroidUI/main/readme/Screenshot_1638500936.png)](https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI)
+
