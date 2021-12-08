@@ -129,6 +129,16 @@ public class QuanLyThuChiSQLite extends SQLiteOpenHelper {
     public void xoaLoaiKhoanThu(int maLoai) {
         db.delete(TABLE_PHANLOAI, "maloai=?", new String[]{String.valueOf(maLoai)});
     }
+   
+    
+    /**
+    * BONUS: TRUY VẤN LẤY GIAO DỊCH TRONG KHOẢNG THỜI GIAN NÀO ĐÓ
+    *   select *
+    *   from giaodich 
+    *   Where substr(ngay,7)||substr(ngay,4,2)||substr(ngay,1,2) between '20210401' and '20210430'
+    *
+    * Trong đó 20210401 và 20210430 là khoảng thời gian cần truy xuất giao dịch
+    * */
 
     //lấy thông tin tổng khoản thu/khoản chi (thông kê
     public float[] getThongTinThuChi() {
