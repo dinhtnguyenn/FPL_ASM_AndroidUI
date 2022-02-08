@@ -6,6 +6,8 @@ Documments: https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/blob/main/readme/A
 
 Videos: https://www.youtube.com/playlist?list=PLzNgKQA0vkdoVcMf73Hj_AJ1TVDVrB0bM
 
+Chức năng Report: https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/tree/report (Nhánh report)
+
 Nếu gặp lỗi "Android Gradle plugin requires Java 11 to run. You are currently using Java 1.8" khi tải project về, thực hiện theo hướng dẫn sau:
 
 Lỗi: 
