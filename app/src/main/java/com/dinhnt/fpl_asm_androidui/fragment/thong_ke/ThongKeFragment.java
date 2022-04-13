@@ -70,18 +70,14 @@ public class ThongKeFragment extends Fragment implements OnChartValueSelectedLis
 
     private void addDataSet(PieChart pieChart) {
         ArrayList<PieEntry> yEntrys = new ArrayList<>();
-        ArrayList<String> xEntrys = new ArrayList<>();
         float[] yData = quanLyThuChi.getThongTinThuChi();
         String[] xData = { "Khoản thu", "Khoản chi" };
 
         for (int i = 0; i < yData.length;i++){
-            yEntrys.add(new PieEntry(yData[i],i));
-        }
-        for (int i = 0; i < xData.length;i++){
-            xEntrys.add(xData[i]);
+            yEntrys.add(new PieEntry(yData[i],xData[i]));
         }
 
-        PieDataSet pieDataSet=new PieDataSet(yEntrys,"Khoản thu/Khoản chi");
+        PieDataSet pieDataSet=new PieDataSet(yEntrys,"Loại thu/chi");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
 
