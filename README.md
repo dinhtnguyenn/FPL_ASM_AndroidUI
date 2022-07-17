@@ -2,11 +2,13 @@
 FPL ASM AndroidUI
 FPL Assignment Thiết kế giao diện trên Android - MOB202 
 
-Documments: https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/blob/main/readme/ASM%20G%C4%90%202.pdf
+Hướng dẫn (Documments): https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/blob/main/readme/ASM%20G%C4%90%202.pdf
 
-Videos: https://www.youtube.com/playlist?list=PLzNgKQA0vkdoVcMf73Hj_AJ1TVDVrB0bM
+PLaylist video hướng dẫn: https://www.youtube.com/playlist?list=PLzNgKQA0vkdoVcMf73Hj_AJ1TVDVrB0bM
 
-Chức năng Report: https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/tree/report (Nhánh report)
+Source ASM phần 1 (không có thống kê): https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI
+
+Source ASM phần 2 (full - bao gồm thống kê): https://github.com/dinhtnguyenn/FPL_ASM_AndroidUI/tree/report
 
 Nếu gặp lỗi "Android Gradle plugin requires Java 11 to run. You are currently using Java 1.8" khi tải project về, thực hiện theo hướng dẫn sau:
 
